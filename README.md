@@ -12,9 +12,22 @@ This system supports:
 
 ## Installation
 
-1. Copy the `SimpleBus` folder into your Unity project.
-2. Ensure all scripts (`EventBus`, `EventListener`, `IEvent`, `IEventListener`) are included.
+You can add **DumbInjector** to your Unity project in two ways:
 
+### Option 1: Git Submodule
+```bash
+git submodule add https://github.com/oultrox/SimpleBus.git Assets/SimpleBus
+```
+
+### Option 2: Unity Package Manager
+
+1. Open **Window > Package Manager**  
+2. Click the **+** button and choose **Add package from git URL**  
+3. Enter:  
+
+```bash
+https://github.com/oultrox/SimpleBus.git
+```
 ---
 
 ## Core Concepts
