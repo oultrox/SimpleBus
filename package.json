@@ -1,0 +1,25 @@
+{
+  "name": "com.oultrox.simplebus",
+  "version": "1.0.0",
+  "displayName": "SimpleBus",
+  "description": "A lightweight and type-safe event bus system for Unity. Supports strongly typed events, listeners, and decoupled communication between components.",
+  "unity": "2021.3",
+  "author": {
+    "name": "oultrox",
+    "email": "oultrox@gmail.com",
+    "url": "https://github.com/oultrox"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oultrox/SimpleBus.git"
+  },
+  "keywords": [
+    "event-bus",
+    "unity",
+    "messaging",
+    "observer",
+    "pubsub",
+    "lightweight"
+  ],
+  "license": "MIT"
+}
