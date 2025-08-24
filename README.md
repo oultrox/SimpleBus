@@ -59,11 +59,18 @@ public class EventListener<T> : IEventListener<T> where T : IEvent
 ---
 
 ## Step 1: Define Your Event
+Events must implement the `IEvent` interface.  
+It’s usually preferred to define them as **structs** since they are lightweight and reduce allocations:
 
 ```csharp
-public class MapGeneratedEvent : IEvent { }
-public class ShowMazePathEvent : IEvent { }
+// Events can be empty
+public struct MapGeneratedEvent : IEvent{} 
 
+// Or have parameters
+public struct ShowMazePathEvent : IEvent
+{
+    public string mazePathName;
+}
 ```
 
 ---
