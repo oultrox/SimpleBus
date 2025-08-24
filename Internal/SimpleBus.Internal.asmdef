@@ -2,7 +2,8 @@
     "name": "SimpleBus.Internal",
     "rootNamespace": "",
     "references": [
-        "GUID:0c7703530962d1d47a40ce7f8bb73157"
+        "GUID:0c7703530962d1d47a40ce7f8bb73157",
+        "GUID:fe3940ca8397e584c9c17e40543b2339"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

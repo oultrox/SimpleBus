@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
+using SimpleBus.Editor;
 
 namespace SimpleBus.Internal
 {
@@ -38,9 +39,11 @@ namespace SimpleBus.Internal
             EventBusTypes = InitializeAllBuses();
         }
         
-        public static void ClearAllBuses()
+        static void ClearAllBuses()
         {
-            Debug.Log($"Clearing all buses...");
+            if (EventBusLoggingToggle.EnableLogging)
+                Debug.Log($"Clearing all listeners...");
+            
             for (int i = 0; i < EventBusTypes.Count; i++)
             {
                 var bustype = EventBusTypes[i];
@@ -59,7 +62,11 @@ namespace SimpleBus.Internal
             {
                 var busType = typedef.MakeGenericType(eventBusType);
                 eventBusTypes.Add(busType);
-                Debug.Log($"Initialized {eventBusType.Name}");
+
+                if (EventBusLoggingToggle.EnableLogging)
+                {
+                    Debug.Log($"Initialized {eventBusType.Name}");
+                }
             }
             
             return eventBusTypes;
