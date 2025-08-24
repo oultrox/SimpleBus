@@ -2,21 +2,21 @@ using System;
 
 namespace SimpleBus
 {
-    public class EventBinder<T> : IEventBinder<T> where T : IEvent
+    public class EventListener<T> : IEventListener<T> where T : IEvent
     {
         Action<T> onEvent = _ => { };
         Action onEventNoArgs = () => { };
     
-        Action<T> IEventBinder<T>.OnEvent { get => onEvent; set => onEvent = value; }
-        Action IEventBinder<T>.OnEventNoArgs { get => onEventNoArgs; set => onEventNoArgs = value;}
+        Action<T> IEventListener<T>.OnEvent { get => onEvent; set => onEvent = value; }
+        Action IEventListener<T>.OnEventNoArgs { get => onEventNoArgs; set => onEventNoArgs = value;}
 
 
-        public EventBinder(Action<T> onEvent)
+        public EventListener(Action<T> onEvent)
         {
             this.onEvent = onEvent;
         }
 
-        public EventBinder(Action onEventNoArgs)
+        public EventListener(Action onEventNoArgs)
         {
             this.onEventNoArgs = onEventNoArgs;
         }
