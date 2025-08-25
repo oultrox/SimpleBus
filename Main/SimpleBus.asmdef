@@ -1,9 +1,7 @@
 {
     "name": "SimpleBus",
     "rootNamespace": "",
-    "references": [
-        "GUID:fe3940ca8397e584c9c17e40543b2339"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
-using SimpleBus.Editor;
 
 namespace SimpleBus.Internal
 {
@@ -41,7 +40,7 @@ namespace SimpleBus.Internal
         
         static void ClearAllBuses()
         {
-            if (EventBusLoggingToggle.EnableLogging)
+            if (EventBusLogger.IsLoggingEnabled)
                 Debug.Log($"Clearing all listeners...");
             
             for (int i = 0; i < EventBusTypes.Count; i++)
@@ -63,7 +62,7 @@ namespace SimpleBus.Internal
                 var busType = typedef.MakeGenericType(eventBusType);
                 eventBusTypes.Add(busType);
 
-                if (EventBusLoggingToggle.EnableLogging)
+                if (EventBusLogger.IsLoggingEnabled)
                 {
                     Debug.Log($"Initialized {eventBusType.Name}");
                 }

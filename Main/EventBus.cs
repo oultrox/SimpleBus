@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using SimpleBus.Editor;
 using UnityEngine;
 
 namespace SimpleBus
@@ -10,7 +9,7 @@ namespace SimpleBus
 
         public static void Register(IEventListener<T> listener)
         {
-            if (EventBusLoggingToggle.EnableLogging)
+            if (EventBusLogger.IsLoggingEnabled)
             {
                 Debug.Log("Event Listener Registered : " + typeof(T).Name);
             }
@@ -20,7 +19,7 @@ namespace SimpleBus
 
         public static void Deregister(IEventListener<T> listener)
         {
-            if (EventBusLoggingToggle.EnableLogging)
+            if (EventBusLogger.IsLoggingEnabled)
             {
                 Debug.Log("Event Listener Deregistered : " + typeof(T).Name);
             }
@@ -39,7 +38,7 @@ namespace SimpleBus
 
         static void Clear()
         {
-            if (EventBusLoggingToggle.EnableLogging)
+            if (EventBusLogger.IsLoggingEnabled)
             {
                 Debug.Log("Event Listener cleared: " + typeof(T).Name);
             }
