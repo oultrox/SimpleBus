@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 namespace SimpleBus
 {
@@ -29,7 +30,7 @@ namespace SimpleBus
 
         public static void Raise(T @event)
         {
-            foreach (var eventBinding in bindings)
+            foreach (var eventBinding in bindings.ToList())
             {
                 eventBinding.OnEvent.Invoke(@event);
                 eventBinding.OnEventNoArgs.Invoke();

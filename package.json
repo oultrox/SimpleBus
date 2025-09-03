@@ -1,6 +1,6 @@
 {
   "name": "com.oultrox.simplebus",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "displayName": "SimpleBus",
   "description": "A lightweight and type-safe event bus system for Unity. Supports strongly typed events, listeners, and decoupled communication between components.",
   "unity": "2021.3",
